@@ -2,7 +2,7 @@ import React from "react";
 import { Menu, Segment } from 'semantic-ui-react'
 import logo from "./logo.svg";
 import "./App.css";
-import { Switch, Route, Link, useParams } from "react-router-dom";
+import { Switch, Route, Link} from "react-router-dom";
 import HourlyEventsPage from "./pages/HourlyEventsPage";
 import DailyEventsPage from "./pages/DailyEventsPage";
 import HourlyStatsPage from "./pages/HourlyStatsPage";

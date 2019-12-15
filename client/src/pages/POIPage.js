@@ -1,7 +1,6 @@
 import React from "react";
 import InfoWrapper from "../components/InfoWrapper";
 import { getPOI,getPOIData } from "../API/api";
-import {Redirect} from 'react-router-dom'
 
 const POIPage = () => {
   React.useEffect(() => {

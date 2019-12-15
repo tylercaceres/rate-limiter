@@ -3,6 +3,7 @@ import axios from "axios";
 export const getHourlyEvents = async () => {
   try {
     let data = axios.get("events/hourly").then((data) => data.data);
+    console.log("THIS IS THE DATA:",data)
     return data;
   } catch (e) {
     console.log(e);

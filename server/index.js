@@ -2,6 +2,8 @@ const METHOD = 1;
 //1 = regular Object method
 //2 = redis method
 
+const ALLOWED_ORIGIN = process.env.ORIGIN_SITE || "*"
+
 const express = require("express");
 const pg = require("pg");
 require("dotenv").config();
@@ -82,7 +84,8 @@ const limitRateHandler = (req, res, next) => {
 };
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  // res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", `${ALLOWED_ORIGIN}`); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
   res.header("Access-Control-Allow-Credentials", true);
