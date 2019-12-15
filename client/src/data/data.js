@@ -10,7 +10,7 @@ export const hourlyEvents = {
       cells: [
         {
           key: "date",
-          content: moment(date).format("DD MMMM YYYY, hh:mm A")
+          content: moment(date).add(hour,'h').format("DD MMMM YYYY, hh:mm A")
         },
         { key: "hour", content: hour },
         { key: "events", content: events }
@@ -19,7 +19,8 @@ export const hourlyEvents = {
   },
   chartTransform: (data) => {
     const transformedData = data.map((point) => {
-      return { x: moment(point.date).add(point.hour, "h"), y: point.events };
+      // return { x: moment(point.date).add(point.hour, "h"), y: point.events };
+      return { x: moment(point.date).add(point.hour,'h'), y: point.events };
     });
     return {
       options: {
@@ -105,7 +106,7 @@ export const hourlyStats = {
       cells: [
         {
           key: "date",
-          content: moment(date).format("DD MMMM YYYY, hh:mm A")
+          content: moment(date).add(hour,'h').format("DD MMMM YYYY, hh:mm A")
         },
         { key: "hour", content: hour },
         { key: "impressions", content: impressions },
