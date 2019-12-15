@@ -10,7 +10,7 @@ export const hourlyEvents = {
       cells: [
         {
           key: "date",
-          content: moment(date).format("DDD MMMM YYYY")
+          content: moment(date).format("DD MMMM YYYY")
         },
         { key: "hour", content: hour },
         { key: "events", content: events }
@@ -58,7 +58,7 @@ export const dailyEvents = {
       cells: [
         {
           key: "date",
-          content: moment(date).format("DDD MMMM YYYY")
+          content: moment(date).format("DD MMMM YYYY")
         },
         { key: "events", content: events }
       ]
@@ -105,7 +105,7 @@ export const hourlyStats = {
       cells: [
         {
           key: "date",
-          content: moment(date).format("DDD MMMM YYYY")
+          content: moment(date).format("DD MMMM YYYY")
         },
         { key: "hour", content: hour },
         { key: "impressions", content: impressions },
@@ -180,7 +180,7 @@ export const dailyStats = {
       cells: [
         {
           key: "date",
-          content: moment(date).format("DDD MMMM YYYY")
+          content: moment(date).format("DD MMMM YYYY")
         },
         { key: "impressions", content: impressions },
         { key: "clicks", content: clicks },
