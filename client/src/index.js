@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
 import "semantic-ui-css/semantic.min.css";
 
-axios.defaults.baseURL = process.env.BASE_URL || "http://localhost:5555/";
+axios.defaults.baseURL = process.env.BASE_URL || REACT_BASE_URL || "http://localhost:5555/";
 // axios.defaults.baseURL = "http://localhost:5555/";
 
 ReactDOM.render(
