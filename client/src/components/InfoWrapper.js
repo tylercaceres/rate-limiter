@@ -4,7 +4,7 @@ import DefaultTable from "./DefaultTable";
 import DefaultChart from "./DefaultChart";
 import Mark from "mark.js";
 import DefaultGeoGraph from "./DefaultGeoGraph";
-import {Segment, Input} from 'semantic-ui-react'
+import { Segment, Input } from "semantic-ui-react";
 
 import "./InfoWrapper.css";
 
@@ -24,7 +24,7 @@ const InfoWrapper = ({
 
   const instance = new Mark("div.context");
   instance.unmark(globalFilter);
-  instance.mark(globalFilter, { className: "highlight",separateWordSearch:false });
+  instance.mark(globalFilter, { className: "highlight" });
 
   const rowsPerPage = 10;
   const totalPages = Math.ceil(currentData.length / rowsPerPage);
@@ -64,9 +64,15 @@ const InfoWrapper = ({
     <div>
       {createTable && (
         <>
-        <Segment inverted>
-          <Input style={{display:"flex",width:"25%"}} value={globalFilter} onChange={handleFilterChange} inverted placeholder="Global Filter..."/>
-        </Segment>
+          <Segment inverted>
+            <Input
+              style={{ display: "flex", width: "25%" }}
+              value={globalFilter}
+              onChange={handleFilterChange}
+              inverted
+              placeholder="Global Filter..."
+            />
+          </Segment>
           {/* <input placeholder="Global Filter" value={globalFilter} onChange={handleFilterChange} /> */}
           <div className="context">
             <DefaultTable
@@ -78,7 +84,9 @@ const InfoWrapper = ({
         </>
       )}
       {createChart && <DefaultChart data={currentData} chartTransform={chartTransform} />}
-      {createGeoGraph && currentData.length > 0 && <DefaultGeoGraph data={currentData} markerData={markerData}/>}
+      {createGeoGraph && currentData.length > 0 && (
+        <DefaultGeoGraph data={currentData} markerData={markerData} />
+      )}
     </div>
   );
 };
